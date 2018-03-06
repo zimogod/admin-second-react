@@ -1,8 +1,7 @@
 import React,{ Component } from 'react';
-import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 // import '../style/home.css';
-class Zimo extends Component{
+class News extends Component{
 	constructor(props){
 		super(props)
 		console.log(this.props.location.state);
@@ -10,19 +9,12 @@ class Zimo extends Component{
 	render(){
 		return (
 			<div className="admin-home">
-				
-				紫漠
-				<Btn />
+				新的
 			</div>
 		)
 	}
-};
-export default Zimo;
+}
+export default News;
 
-class Btn extends Component{
-	render(){
-		return <div>公共组件</div>
-	}
-};
 
 

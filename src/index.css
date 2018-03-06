@@ -9,3 +9,10 @@ html,body {
 	background:#ccc;
 	color:red;
 }
+.footer{
+	width:500px;
+	height: 200px;
+}
+.selected{
+	color:yellow;
+}
