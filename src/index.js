@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import './index.css';
 import { HashRouter as Router,Route,Switch,Redirect,NavLink } from 'react-router-dom';
 import Home from './client/home';
 import Zimo from './client/zimo';
 import News from './client/newFiles';
+import store from './store/store';
 //注意所有的import进行缓存的方法都在最上面
 //路由4.0.0以后，将路由里面的hashHistory、Router、IndexRoute废弃，代替它的是BrowserRouter
 
 //exact：是严格匹配路由，也就是说所有的路径于跳转的对应路径
-//完全一致的情况下，才让当前所在的路由显示高亮状态
+//完全一致的情况下，才让当前所在的路由处于激活状态
 
 // BrowserRouter浏览器的正常跳转，是一般开发时用的路由
 // 跳转，而到了线上是用hash进行路由跳转(hash路由跳转
@@ -32,27 +34,14 @@ import News from './client/newFiles';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-
-
-<Router>
-	{/*<div className="aaa">
-		<ul className="footer">
-	        <li><NavLink to="/news" activeStyle={{ color: '#4dc060' }}>首页列表项目 </NavLink></li>
-	        <li><NavLink to="/zimo" activeStyle={{ color: '#4dc060' }}>资讯</NavLink></li>
-	        <li><NavLink to="/" exact activeClassName="selected">我的</NavLink></li>
-	    </ul>
+<Provider store={store}>
+	<Router>
 		<Switch className="aaa">
-		    <Route path="/" exact component={Home}></Route>
-		    <Route path="/zimo" component={Zimo}></Route>
-		    <Route path="/news" component={News} />
-		    
+			<Route exact path='/' component={Home} />
+			<Route path='/zimo' component={Zimo} />
 		</Switch>
-	</div>*/}
-	<Switch className="aaa">
-		<Route exact path='/' component={Home} />
-		<Route path='/zimo' component={Zimo} />
-	</Switch>
-</Router>,
-	 document.getElementById('root')
+	</Router>
+</Provider>,
+document.getElementById('root')
 );
 registerServiceWorker();
