@@ -23,7 +23,7 @@ class Zimo extends Component{
 				<br/>					
 					{ solary }
 				<br/>
-				<button onClick={()=>changeSolary()}>增加工资</button>
+				<button onClick={()=>changeSolary()}>增加薪水</button>
 				<br/>
 					{ pay }
 				<br/>
