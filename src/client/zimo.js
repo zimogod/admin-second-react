@@ -27,7 +27,7 @@ class Zimo extends Component{
 				<br/>
 					{ pay }
 				<br/>
-				<button onClick={()=>connectString()}>拼接字符串</button>
+				<button onClick={()=>connectString()}>拼接zimo</button>
 			</div>
 		)
 	}
